@@ -1,7 +1,7 @@
 pub fn find_your_score(input: impl Into<String>) -> i32 {
     input
         .into()
-        .split('\n')
+        .lines()
         .map(|scores| {
             if scores == "" {
                 return 0;
@@ -42,7 +42,7 @@ pub fn find_your_score(input: impl Into<String>) -> i32 {
 pub fn find_your_score_with_context(input: impl Into<String>) -> i32 {
     input
         .into()
-        .split('\n')
+        .lines()
         .map(|scores| {
             if scores == "" {
                 return 0;

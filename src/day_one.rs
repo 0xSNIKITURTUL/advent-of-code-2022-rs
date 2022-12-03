@@ -3,7 +3,7 @@ pub fn find_max_calories(input: impl Into<String>) -> i32 {
         .into()
         .split("\n\n")
         .map(|elf| {
-            elf.split('\n')
+            elf.lines()
                 .map(|item| match item.parse::<i32>() {
                     Ok(num) => num,
                     Err(_) => 0,
@@ -22,7 +22,7 @@ pub fn find_top_three_calories(input: impl Into<String>) -> i32 {
         .into()
         .split("\n\n")
         .map(|elf| {
-            elf.split('\n')
+            elf.lines()
                 .map(|item| match item.parse::<i32>() {
                     Ok(num) => num,
                     Err(_) => 0,

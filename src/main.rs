@@ -1,6 +1,7 @@
 use std::fs;
 
 mod day_one;
+mod day_three;
 mod day_two;
 
 fn main() {
@@ -23,4 +24,9 @@ fn main() {
     // day 02: rock paper scissors part 2
     let day_two_result = day_two::find_your_score_with_context(day_two_input);
     println!("day 02 part 2: {}", day_two_result);
+
+    // day 03: rucksack reorganization part 1
+    let day_three_input = fs::read_to_string("inputs/3.txt").unwrap();
+    let day_three_result: i32 = day_three::find_sum_of_priorities_of_common_items(&day_three_input);
+    println!("day 03 part 1: {}", day_three_result);
 }
