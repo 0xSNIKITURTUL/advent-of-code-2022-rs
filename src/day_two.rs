@@ -1,4 +1,4 @@
-pub fn find_your_score(input: impl Into<String>) -> i32 {
+pub fn part_one(input: impl Into<String>) -> i32 {
     input
         .into()
         .lines()
@@ -39,7 +39,7 @@ pub fn find_your_score(input: impl Into<String>) -> i32 {
         .sum::<i32>()
 }
 
-pub fn find_your_score_with_context(input: impl Into<String>) -> i32 {
+pub fn part_two(input: impl Into<String>) -> i32 {
     input
         .into()
         .lines()
@@ -82,7 +82,7 @@ pub fn find_your_score_with_context(input: impl Into<String>) -> i32 {
 
 #[cfg(test)]
 mod tests {
-    use crate::day_two::{find_your_score, find_your_score_with_context};
+    use crate::day_two::{part_one, part_two};
 
     static INPUT: &'static str = "A Y
 B X
@@ -90,11 +90,11 @@ C Z";
 
     #[test]
     fn day_two_part_one() {
-        assert!(find_your_score(INPUT) == 15);
+        assert!(part_one(INPUT) == 15);
     }
 
     #[test]
     fn day_two_part_two() {
-        assert!(find_your_score_with_context(INPUT) == 12);
+        assert!(part_two(INPUT) == 12);
     }
 }

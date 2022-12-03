@@ -1,4 +1,4 @@
-pub fn find_max_calories(input: impl Into<String>) -> i32 {
+pub fn part_one(input: impl Into<String>) -> i32 {
     input
         .into()
         .split("\n\n")
@@ -14,7 +14,7 @@ pub fn find_max_calories(input: impl Into<String>) -> i32 {
         .unwrap()
 }
 
-pub fn find_top_three_calories(input: impl Into<String>) -> i32 {
+pub fn part_two(input: impl Into<String>) -> i32 {
     let mut first = 0;
     let mut second = 0;
     let mut third = 0;
@@ -46,7 +46,7 @@ pub fn find_top_three_calories(input: impl Into<String>) -> i32 {
 
 #[cfg(test)]
 mod tests {
-    use crate::day_one::{find_max_calories, find_top_three_calories};
+    use crate::day_one::{part_one, part_two};
 
     static INPUT: &'static str = "1000
 2000
@@ -65,11 +65,11 @@ mod tests {
 
     #[test]
     fn day_one_part_one() {
-        assert!(find_max_calories(INPUT) == 24000);
+        assert!(part_one(INPUT) == 24000);
     }
 
     #[test]
     fn day_one_part_two() {
-        assert!(find_top_three_calories(INPUT) == 45000);
+        assert!(part_two(INPUT) == 45000);
     }
 }

@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-pub fn find_sum_of_priorities_of_common_items(input: impl Into<String>) -> i32 {
+pub fn part_one(input: impl Into<String>) -> i32 {
     input
         .into()
         .lines()
@@ -20,7 +20,7 @@ pub fn find_sum_of_priorities_of_common_items(input: impl Into<String>) -> i32 {
         .sum::<i32>() as i32
 }
 
-pub fn find_sum_of_priorities(input: impl Into<String>) -> i32 {
+pub fn part_two(input: impl Into<String>) -> i32 {
     input
         .into()
         .lines()
@@ -45,7 +45,7 @@ pub fn find_sum_of_priorities(input: impl Into<String>) -> i32 {
 
 #[cfg(test)]
 mod test {
-    use super::{find_sum_of_priorities, find_sum_of_priorities_of_common_items};
+    use super::{part_one, part_two};
 
     static INPUT: &'static str = "vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
@@ -56,11 +56,11 @@ CrZsJsPPZsGzwwsLwLmpwMDw";
 
     #[test]
     fn day_three_part_one() {
-        assert!(find_sum_of_priorities_of_common_items(INPUT) == 157);
+        assert!(part_one(INPUT) == 157);
     }
 
     #[test]
     fn day_three_part_two() {
-        assert!(find_sum_of_priorities(INPUT) == 70);
+        assert!(part_two(INPUT) == 70);
     }
 }
