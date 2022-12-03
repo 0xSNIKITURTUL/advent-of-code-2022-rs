@@ -29,4 +29,8 @@ fn main() {
     let day_three_input = fs::read_to_string("inputs/3.txt").unwrap();
     let day_three_result: i32 = day_three::find_sum_of_priorities_of_common_items(&day_three_input);
     println!("day 03 part 1: {}", day_three_result);
+
+    // day 03: rucksack reorganization part 2
+    let day_three_result: i32 = day_three::find_sum_of_priorities(day_three_input);
+    println!("day 03 part 2: {}", day_three_result);
 }
