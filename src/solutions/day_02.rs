@@ -8,9 +8,6 @@ impl Solver for Day02 {
             .into()
             .lines()
             .map(|scores| {
-                if scores == "" {
-                    return 0;
-                }
                 let mut choices = scores.split(' ');
                 let opp_choice = choices.nth(0).unwrap();
                 let your_choice = choices.nth(0).unwrap();
@@ -49,9 +46,6 @@ impl Solver for Day02 {
             .into()
             .lines()
             .map(|scores| {
-                if scores == "" {
-                    return 0;
-                }
                 let mut choices = scores.split(' ');
                 let opp_choice = choices.nth(0).unwrap();
                 let strategy = choices.nth(0).unwrap();
