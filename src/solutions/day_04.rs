@@ -25,26 +25,8 @@ impl Solver for Day04 {
         input
             .lines()
             .map(|pair| {
-                let mut split = pair.split(',');
-                let elf_1 = split.nth(0).unwrap();
-                let elf_2 = split.nth(0).unwrap();
-
-                let mut elf_1_range = elf_1.split('-');
-                let elf_1_start = elf_1_range.nth(0).unwrap().parse::<i32>().unwrap();
-                let elf_1_end = elf_1_range.nth(0).unwrap().parse::<i32>().unwrap();
-
-                let mut elf_2_range = elf_2.split('-');
-                let elf_2_start = elf_2_range.nth(0).unwrap().parse::<i32>().unwrap();
-                let elf_2_end = elf_2_range.nth(0).unwrap().parse::<i32>().unwrap();
-
-                let elf_1_range = (elf_1_start..=elf_1_end).collect::<HashSet<i32>>();
-                let elf_2_range = (elf_2_start..=elf_2_end).collect::<HashSet<i32>>();
-
-                let common = elf_1_range
-                    .intersection(&elf_2_range)
-                    .cloned()
-                    .collect::<HashSet<i32>>();
-
+                let (elf_1_range, elf_2_range) = split_pairs(pair);
+                let common = find_common_elements(elf_1_range.clone(), elf_2_range.clone());
                 if common.len() != elf_1_range.len() && common.len() != elf_2_range.len() {
                     return 0;
                 }
@@ -58,25 +40,8 @@ impl Solver for Day04 {
         input
             .lines()
             .map(|pair| {
-                let mut split = pair.split(',');
-                let elf_1 = split.nth(0).unwrap();
-                let elf_2 = split.nth(0).unwrap();
-
-                let mut elf_1_range = elf_1.split('-');
-                let elf_1_start = elf_1_range.nth(0).unwrap().parse::<i32>().unwrap();
-                let elf_1_end = elf_1_range.nth(0).unwrap().parse::<i32>().unwrap();
-
-                let mut elf_2_range = elf_2.split('-');
-                let elf_2_start = elf_2_range.nth(0).unwrap().parse::<i32>().unwrap();
-                let elf_2_end = elf_2_range.nth(0).unwrap().parse::<i32>().unwrap();
-
-                let elf_1_range = (elf_1_start..=elf_1_end).collect::<HashSet<i32>>();
-                let elf_2_range = (elf_2_start..=elf_2_end).collect::<HashSet<i32>>();
-
-                let common = elf_1_range
-                    .intersection(&elf_2_range)
-                    .cloned()
-                    .collect::<HashSet<i32>>();
+                let (elf_1_range, elf_2_range) = split_pairs(pair);
+                let common = find_common_elements(elf_1_range, elf_2_range);
                 if common.len() == 0 {
                     return 0;
                 }
