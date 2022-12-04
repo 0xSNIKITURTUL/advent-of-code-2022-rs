@@ -10,9 +10,6 @@ impl Solver for Day03 {
             .into()
             .lines()
             .map(|rucksack| {
-                if rucksack == "" {
-                    return 0;
-                }
                 let (comp_1, comp_2) = rucksack.split_at(rucksack.len() / 2);
                 let compartment_1 = comp_1.chars().collect::<HashSet<char>>();
                 let compartment_2 = comp_2.chars().collect::<HashSet<char>>();
@@ -38,7 +35,7 @@ impl Solver for Day03 {
                 let set1 = group[0].chars().collect::<HashSet<char>>();
                 let set2 = group[1].chars().collect::<HashSet<char>>();
                 let set3 = group[2].chars().collect::<HashSet<char>>();
-                let intersection: HashSet<_> = set1.intersection(&set2).cloned().collect();
+                let intersection: HashSet<char> = set1.intersection(&set2).cloned().collect();
                 let character = intersection.intersection(&set3).next().unwrap();
                 if character.is_ascii_lowercase() {
                     return (*character as i32) - 96;
