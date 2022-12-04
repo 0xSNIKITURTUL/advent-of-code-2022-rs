@@ -30,4 +30,13 @@ fn main() {
     // day 03: rucksack reorganization part 2
     let day_three_result = solve::<day_03::Day03>(day_three_input, 2);
     println!("day 03 part 2: {}", day_three_result);
+
+    // day 04: camp cleanup part 1
+    let day_four_input = fs::read_to_string("inputs/4.txt").unwrap();
+    let day_four_result = solve::<day_04::Day04>(&day_four_input, 1);
+    println!("day 04 part 1: {}", day_four_result);
+
+    // day 04: camp cleanup part 2
+    let day_four_result = solve::<day_04::Day04>(day_four_input, 2);
+    println!("day 04 part 2: {}", day_four_result);
 }
