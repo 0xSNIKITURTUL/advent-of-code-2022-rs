@@ -15,31 +15,31 @@ impl Solver for Day02 {
                 let opp_choice = choices.nth(0).unwrap();
                 let your_choice = choices.nth(0).unwrap();
 
-                if your_choice == "X" {
+                return if your_choice == "X" {
                     if opp_choice == "A" {
-                        return 3 + 1;
+                        3 + 1
                     } else if opp_choice == "B" {
-                        return 0 + 1;
+                        0 + 1
                     } else {
-                        return 6 + 1;
+                        6 + 1
                     }
                 } else if your_choice == "Y" {
                     if opp_choice == "A" {
-                        return 6 + 2;
+                        6 + 2
                     } else if opp_choice == "B" {
-                        return 3 + 2;
+                        3 + 2
                     } else {
-                        return 0 + 2;
+                        0 + 2
                     }
                 } else {
                     if opp_choice == "A" {
-                        return 0 + 3;
+                        0 + 3
                     } else if opp_choice == "B" {
-                        return 6 + 3;
+                        6 + 3
                     } else {
-                        return 3 + 3;
+                        3 + 3
                     }
-                }
+                };
             })
             .sum::<i32>()
     }
@@ -56,31 +56,31 @@ impl Solver for Day02 {
                 let opp_choice = choices.nth(0).unwrap();
                 let strategy = choices.nth(0).unwrap();
 
-                if strategy == "X" {
+                return if strategy == "X" {
                     if opp_choice == "A" {
-                        return 0 + 3;
+                        0 + 3
                     } else if opp_choice == "B" {
-                        return 0 + 1;
+                        0 + 1
                     } else {
-                        return 0 + 2;
+                        0 + 2
                     }
                 } else if strategy == "Y" {
                     if opp_choice == "A" {
-                        return 3 + 1;
+                        3 + 1
                     } else if opp_choice == "B" {
-                        return 3 + 2;
+                        3 + 2
                     } else {
-                        return 3 + 3;
+                        3 + 3
                     }
                 } else {
                     if opp_choice == "A" {
-                        return 6 + 2;
+                        6 + 2
                     } else if opp_choice == "B" {
-                        return 6 + 3;
+                        6 + 3
                     } else {
-                        return 6 + 1;
+                        6 + 1
                     }
-                }
+                };
             })
             .sum::<i32>()
     }

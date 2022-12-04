@@ -21,8 +21,8 @@ fn split_pairs(input: &str) -> (HashSet<i32>, HashSet<i32>) {
 
 impl Solver for Day04 {
     fn part_one(input: impl Into<String>) -> i32 {
-        let input: String = input.into();
         input
+            .into()
             .lines()
             .map(|pair| {
                 let (elf_1_range, elf_2_range) = split_pairs(pair);
@@ -36,8 +36,8 @@ impl Solver for Day04 {
     }
 
     fn part_two(input: impl Into<String>) -> i32 {
-        let input: String = input.into();
         input
+            .into()
             .lines()
             .map(|pair| {
                 let (elf_1_range, elf_2_range) = split_pairs(pair);
