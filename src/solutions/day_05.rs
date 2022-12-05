@@ -80,11 +80,9 @@ impl Solver<String> for Day05 {
             let moved = instruction[1].parse::<usize>().unwrap();
             let from = instruction[3].parse::<usize>().unwrap() - 1;
             let to = instruction[5].parse::<usize>().unwrap() - 1;
-            let mut crane = vec![];
-            (0..moved).for_each(|_| {
-                let moved = diagram[from].pop().unwrap();
-                crane.push(moved);
-            });
+            let mut crane = (0..moved)
+                .map(|_| diagram[from].pop().unwrap())
+                .collect::<Vec<char>>();
             crane.reverse();
             diagram[to].append(&mut crane);
         });
