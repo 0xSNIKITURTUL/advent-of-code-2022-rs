@@ -35,7 +35,7 @@ impl Solver for Day03 {
                 let set1 = group[0].chars().collect::<HashSet<char>>();
                 let set2 = group[1].chars().collect::<HashSet<char>>();
                 let set3 = group[2].chars().collect::<HashSet<char>>();
-                let intersection: HashSet<char> = set1.intersection(&set2).cloned().collect();
+                let intersection = set1.intersection(&set2).cloned().collect::<HashSet<char>>();
                 let character = intersection.intersection(&set3).next().unwrap();
                 if character.is_ascii_lowercase() {
                     return (*character as i32) - 96;
