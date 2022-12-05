@@ -1,10 +1,11 @@
 use crate::solver::Solver;
 
-/// Code adapted from @Netwave on stackoverflow: https://stackoverflow.com/a/64499219/19020697
 fn rotate90(v: Vec<Vec<char>>) -> Vec<Vec<char>> {
     if v.is_empty() {
         return v;
     }
+
+    // transpose code adapted from @Netwave on stackoverflow: https://stackoverflow.com/a/64499219/19020697
     let transposed = (0..v[0].len())
         .map(|i| v.iter().map(|inner| inner[i]).collect::<Vec<char>>())
         .collect::<Vec<Vec<char>>>();
