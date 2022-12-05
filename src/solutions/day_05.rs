@@ -55,8 +55,8 @@ impl Solver<String> for Day05 {
             let from = instruction[3].parse::<usize>().unwrap() - 1;
             let to = instruction[5].parse::<usize>().unwrap() - 1;
             (0..moved).for_each(|_| {
-                let moved = diagram[from].pop().unwrap();
-                diagram[to].push(moved);
+                let crane = diagram[from].pop().unwrap();
+                diagram[to].push(crane);
             });
         });
 
