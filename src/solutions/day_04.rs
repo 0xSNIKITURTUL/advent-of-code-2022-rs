@@ -53,7 +53,7 @@ impl Solver for Day04 {
 
 #[cfg(test)]
 mod test {
-    use crate::solver::test_solution;
+    use crate::solver::{test_solution, Part};
 
     use super::Day04;
 
@@ -65,7 +65,12 @@ mod test {
 2-6,4-8";
 
     #[test]
-    fn test_day_04() {
-        test_solution::<Day04>(INPUT, 2, 4);
+    fn test_day_04_part_one() {
+        test_solution::<Day04>(INPUT, 2, Part::One);
+    }
+
+    #[test]
+    fn test_day_04_part_two() {
+        test_solution::<Day04>(INPUT, 4, Part::Two);
     }
 }

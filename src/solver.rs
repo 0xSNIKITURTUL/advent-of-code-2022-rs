@@ -10,11 +10,22 @@ pub fn solve<S: Solver>(input: impl Into<String>, part: u8) -> i32 {
     S::part_two(input)
 }
 
+pub enum Part {
+    One,
+    Two,
+}
+
 pub fn test_solution<S: Solver>(
     input: impl Into<String> + Clone + Copy,
-    part_one_solution: i32,
-    part_two_solution: i32,
+    expected_solution: i32,
+    part: Part,
 ) {
-    assert_eq!(S::part_one(input), part_one_solution);
-    assert_eq!(S::part_two(input), part_two_solution);
+    match part {
+        Part::One => {
+            assert_eq!(S::part_one(input), expected_solution);
+        }
+        Part::Two => {
+            assert_eq!(S::part_two(input), expected_solution);
+        }
+    }
 }
