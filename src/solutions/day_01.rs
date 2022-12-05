@@ -9,10 +9,7 @@ impl Solver for Day01 {
             .split("\n\n")
             .map(|elf| {
                 elf.lines()
-                    .map(|item| match item.parse::<i32>() {
-                        Ok(num) => num,
-                        Err(_) => 0,
-                    })
+                    .filter_map(|line| line.parse::<i32>().map(|value| value).ok())
                     .sum::<i32>()
             })
             .max()
@@ -20,33 +17,17 @@ impl Solver for Day01 {
     }
 
     fn part_two(input: impl Into<String>) -> i32 {
-        let mut first = 0;
-        let mut second = 0;
-        let mut third = 0;
-        input
+        let mut result = input
             .into()
             .split("\n\n")
             .map(|elf| {
                 elf.lines()
-                    .map(|item| match item.parse::<i32>() {
-                        Ok(num) => num,
-                        Err(_) => 0,
-                    })
+                    .filter_map(|line| line.parse::<i32>().map(|value| value).ok())
                     .sum::<i32>()
             })
-            .for_each(|calories| {
-                if calories > first {
-                    third = second;
-                    second = first;
-                    first = calories;
-                } else if calories > second {
-                    third = second;
-                    second = calories;
-                } else if calories > third {
-                    third = calories;
-                }
-            });
-        first + second + third
+            .collect::<Vec<i32>>();
+        result.sort();
+        result.iter().rev().take(3).sum::<i32>()
     }
 }
 
