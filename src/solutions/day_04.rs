@@ -19,7 +19,7 @@ fn split_pairs(input: &str) -> (HashSet<i32>, HashSet<i32>) {
     (set_1, set_2)
 }
 
-impl Solver for Day04 {
+impl Solver<i32> for Day04 {
     fn part_one(input: impl Into<String>) -> i32 {
         input
             .into()
@@ -66,11 +66,11 @@ mod tests {
 
     #[test]
     fn test_day_04_part_one() {
-        test_solution::<Day04>(INPUT, 2, Part::One);
+        test_solution::<i32, Day04>(INPUT, 2, Part::One);
     }
 
     #[test]
     fn test_day_04_part_two() {
-        test_solution::<Day04>(INPUT, 4, Part::Two);
+        test_solution::<i32, Day04>(INPUT, 4, Part::Two);
     }
 }

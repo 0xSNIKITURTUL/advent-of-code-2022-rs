@@ -2,7 +2,7 @@ use crate::solver::Solver;
 
 pub struct Day02;
 
-impl Solver for Day02 {
+impl Solver<i32> for Day02 {
     fn part_one(input: impl Into<String>) -> i32 {
         input
             .into()
@@ -92,11 +92,11 @@ C Z";
 
     #[test]
     fn test_day_02_part_one() {
-        test_solution::<Day02>(INPUT, 15, Part::One);
+        test_solution::<i32, Day02>(INPUT, 15, Part::One);
     }
 
     #[test]
     fn test_day_02_part_two() {
-        test_solution::<Day02>(INPUT, 12, Part::Two);
+        test_solution::<i32, Day02>(INPUT, 12, Part::Two);
     }
 }

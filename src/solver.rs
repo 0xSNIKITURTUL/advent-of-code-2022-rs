@@ -1,9 +1,11 @@
-pub trait Solver {
-    fn part_one(input: impl Into<String>) -> i32;
-    fn part_two(input: impl Into<String>) -> i32;
+use std::fmt::Debug;
+
+pub trait Solver<T: PartialEq + Eq> {
+    fn part_one(input: impl Into<String>) -> T;
+    fn part_two(input: impl Into<String>) -> T;
 }
 
-pub fn solve<S: Solver>(input: impl Into<String>, part: u8) -> i32 {
+pub fn solve<T: PartialEq + Eq, S: Solver<T>>(input: impl Into<String>, part: u8) -> T {
     if part == 1 {
         return S::part_one(input);
     }
@@ -15,9 +17,9 @@ pub enum Part {
     Two,
 }
 
-pub fn test_solution<S: Solver>(
+pub fn test_solution<T: Eq + PartialEq + Debug, S: Solver<T>>(
     input: impl Into<String> + Clone + Copy,
-    expected_solution: i32,
+    expected_solution: T,
     part: Part,
 ) {
     match part {
