@@ -47,7 +47,7 @@ impl Solver for Day03 {
 }
 
 #[cfg(test)]
-mod test {
+mod tests {
     use crate::solver::{test_solution, Part};
 
     use super::Day03;
