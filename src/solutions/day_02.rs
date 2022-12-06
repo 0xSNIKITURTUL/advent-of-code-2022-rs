@@ -9,34 +9,18 @@ impl Solver<i32> for Day02 {
             .lines()
             .map(|scores| {
                 let mut choices = scores.split(' ');
-                let opp_choice = choices.nth(0).unwrap();
-                let your_choice = choices.nth(0).unwrap();
-
-                return if your_choice == "X" {
-                    if opp_choice == "A" {
-                        3 + 1
-                    } else if opp_choice == "B" {
-                        0 + 1
-                    } else {
-                        6 + 1
-                    }
-                } else if your_choice == "Y" {
-                    if opp_choice == "A" {
-                        6 + 2
-                    } else if opp_choice == "B" {
-                        3 + 2
-                    } else {
-                        0 + 2
-                    }
-                } else {
-                    if opp_choice == "A" {
-                        0 + 3
-                    } else if opp_choice == "B" {
-                        6 + 3
-                    } else {
-                        3 + 3
-                    }
-                };
+                match (choices.nth(0), choices.nth(0)) {
+                    (Some("A"), Some("X")) => 4,
+                    (Some("B"), Some("X")) => 1,
+                    (Some("C"), Some("X")) => 7,
+                    (Some("A"), Some("Y")) => 8,
+                    (Some("B"), Some("Y")) => 5,
+                    (Some("C"), Some("Y")) => 2,
+                    (Some("A"), Some("Z")) => 3,
+                    (Some("B"), Some("Z")) => 9,
+                    (Some("C"), Some("Z")) => 6,
+                    _ => panic!("invalid inputs"),
+                }
             })
             .sum::<i32>()
     }
@@ -47,34 +31,18 @@ impl Solver<i32> for Day02 {
             .lines()
             .map(|scores| {
                 let mut choices = scores.split(' ');
-                let opp_choice = choices.nth(0).unwrap();
-                let strategy = choices.nth(0).unwrap();
-
-                return if strategy == "X" {
-                    if opp_choice == "A" {
-                        0 + 3
-                    } else if opp_choice == "B" {
-                        0 + 1
-                    } else {
-                        0 + 2
-                    }
-                } else if strategy == "Y" {
-                    if opp_choice == "A" {
-                        3 + 1
-                    } else if opp_choice == "B" {
-                        3 + 2
-                    } else {
-                        3 + 3
-                    }
-                } else {
-                    if opp_choice == "A" {
-                        6 + 2
-                    } else if opp_choice == "B" {
-                        6 + 3
-                    } else {
-                        6 + 1
-                    }
-                };
+                match (choices.nth(0), choices.nth(0)) {
+                    (Some("A"), Some("X")) => 3,
+                    (Some("B"), Some("X")) => 1,
+                    (Some("C"), Some("X")) => 2,
+                    (Some("A"), Some("Y")) => 4,
+                    (Some("B"), Some("Y")) => 5,
+                    (Some("C"), Some("Y")) => 6,
+                    (Some("A"), Some("Z")) => 8,
+                    (Some("B"), Some("Z")) => 9,
+                    (Some("C"), Some("Z")) => 7,
+                    _ => panic!("invalid inputs"),
+                }
             })
             .sum::<i32>()
     }
