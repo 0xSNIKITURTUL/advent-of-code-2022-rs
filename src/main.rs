@@ -10,66 +10,66 @@ fn main() {
     println!("==============");
 
     // day 01: calorie counting part 1
-    let day_one_input = fs::read_to_string("inputs/1.txt").unwrap();
-    let day_one_result = solve::<i32, day_01::Day01>(&day_one_input, Part::One);
-    println!("day 01 part 1: {}", day_one_result);
+    let day_01_input = fs::read_to_string("inputs/1.txt").unwrap();
+    let day_01_part_one_result = solve::<i32, day_01::Day01>(&day_01_input, Part::One);
+    println!("day 01 part 1: {}", day_01_part_one_result);
 
     // day 01: calorie counting part 2
-    let day_one_result = solve::<i32, day_01::Day01>(day_one_input, Part::Two);
-    println!("day 01 part 2: {}", day_one_result);
+    let day_01_part_two_result = solve::<i32, day_01::Day01>(day_01_input, Part::Two);
+    println!("day 01 part 2: {}", day_01_part_two_result);
 
     println!("==============");
 
     // day 02: rock paper scissors part 1
-    let day_two_input = fs::read_to_string("inputs/2.txt").unwrap();
-    let day_two_result = solve::<i32, day_02::Day02>(&day_two_input, Part::One);
-    println!("day 02 part 1: {}", day_two_result);
+    let day_02_input = fs::read_to_string("inputs/2.txt").unwrap();
+    let day_02_part_one_result = solve::<i32, day_02::Day02>(&day_02_input, Part::One);
+    println!("day 02 part 1: {}", day_02_part_one_result);
 
     // day 02: rock paper scissors part 2
-    let day_two_result = solve::<i32, day_02::Day02>(day_two_input, Part::Two);
-    println!("day 02 part 2: {}", day_two_result);
+    let day_02_part_two_result = solve::<i32, day_02::Day02>(day_02_input, Part::Two);
+    println!("day 02 part 2: {}", day_02_part_two_result);
 
     println!("==============");
 
     // day 03: rucksack reorganization part 1
-    let day_three_input = fs::read_to_string("inputs/3.txt").unwrap();
-    let day_three_result = solve::<i32, day_03::Day03>(&day_three_input, Part::One);
-    println!("day 03 part 1: {}", day_three_result);
+    let day_03_input = fs::read_to_string("inputs/3.txt").unwrap();
+    let day_03_part_one_result = solve::<i32, day_03::Day03>(&day_03_input, Part::One);
+    println!("day 03 part 1: {}", day_03_part_one_result);
 
     // day 03: rucksack reorganization part 2
-    let day_three_result = solve::<i32, day_03::Day03>(day_three_input, Part::Two);
-    println!("day 03 part 2: {}", day_three_result);
+    let day_03_part_two_result = solve::<i32, day_03::Day03>(day_03_input, Part::Two);
+    println!("day 03 part 2: {}", day_03_part_two_result);
 
     println!("==============");
 
     // day 04: camp cleanup part 1
-    let day_four_input = fs::read_to_string("inputs/4.txt").unwrap();
-    let day_four_result = solve::<i32, day_04::Day04>(&day_four_input, Part::One);
-    println!("day 04 part 1: {}", day_four_result);
+    let day_04_input = fs::read_to_string("inputs/4.txt").unwrap();
+    let day_04_part_one_result = solve::<i32, day_04::Day04>(&day_04_input, Part::One);
+    println!("day 04 part 1: {}", day_04_part_one_result);
 
     // day 04: camp cleanup part 2
-    let day_four_result = solve::<i32, day_04::Day04>(day_four_input, Part::Two);
-    println!("day 04 part 2: {}", day_four_result);
+    let day_04_part_two_result = solve::<i32, day_04::Day04>(day_04_input, Part::Two);
+    println!("day 04 part 2: {}", day_04_part_two_result);
 
     println!("==============");
 
     // day 05: supply stacks part 1
-    let day_five_input = fs::read_to_string("inputs/5.txt").unwrap();
-    let day_five_result = solve::<String, day_05::Day05>(&day_five_input, Part::One);
-    println!("day 05 part 1: {}", day_five_result);
+    let day_05_input = fs::read_to_string("inputs/5.txt").unwrap();
+    let day_05_part_one_result = solve::<String, day_05::Day05>(&day_05_input, Part::One);
+    println!("day 05 part 1: {}", day_05_part_one_result);
 
     // day 05: supply stacks part 2
-    let day_five_result = solve::<String, day_05::Day05>(day_five_input, Part::Two);
-    println!("day 05 part 2: {}", day_five_result);
+    let day_05_part_two_result = solve::<String, day_05::Day05>(day_05_input, Part::Two);
+    println!("day 05 part 2: {}", day_05_part_two_result);
 
     println!("==============");
 
     // day 06: tuning trouble part 1
-    let day_six_input = fs::read_to_string("inputs/6.txt").unwrap();
-    let day_six_result = solve::<usize, day_06::Day06>(&day_six_input, Part::One);
-    println!("day 06 part 1: {}", day_six_result);
+    let day_06_input = fs::read_to_string("inputs/6.txt").unwrap();
+    let day_06_part_one_result = solve::<usize, day_06::Day06>(&day_06_input, Part::One);
+    println!("day 06 part 1: {}", day_06_part_one_result);
 
     // day 06: tuning trouble part 2
-    let day_five_result = solve::<usize, day_06::Day06>(day_six_input, Part::Two);
-    println!("day 06 part 2: {}", day_five_result);
+    let day_06_part_two_result = solve::<usize, day_06::Day06>(day_06_input, Part::Two);
+    println!("day 06 part 2: {}", day_06_part_two_result);
 }
