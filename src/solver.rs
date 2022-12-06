@@ -5,11 +5,11 @@ pub trait Solver<T: PartialEq + Eq> {
     fn part_two(input: impl Into<String>) -> T;
 }
 
-pub fn solve<T: PartialEq + Eq, S: Solver<T>>(input: impl Into<String>, part: u8) -> T {
-    if part == 1 {
-        return S::part_one(input);
+pub fn solve<T: PartialEq + Eq, S: Solver<T>>(input: impl Into<String>, part: Part) -> T {
+    match part {
+        Part::One => S::part_one(input),
+        Part::Two => S::part_two(input),
     }
-    S::part_two(input)
 }
 
 pub enum Part {
