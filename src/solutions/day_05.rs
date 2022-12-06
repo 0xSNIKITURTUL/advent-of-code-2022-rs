@@ -49,12 +49,13 @@ impl Solver<String> for Day05 {
             });
         });
 
-        let solution = diagram
-            .iter()
-            .map(|stack| stack[stack.len() - 1] as u8)
-            .collect::<Vec<u8>>();
-
-        String::from_utf8(solution).unwrap()
+        String::from_utf8(
+            diagram
+                .iter()
+                .map(|stack| stack[stack.len() - 1] as u8)
+                .collect::<Vec<u8>>(),
+        )
+        .unwrap()
     }
 
     fn part_two(input: impl Into<String>) -> String {
@@ -75,12 +76,13 @@ impl Solver<String> for Day05 {
             diagram[to].append(&mut crane);
         });
 
-        let sol = diagram
-            .iter()
-            .map(|stack| stack[stack.len() - 1] as u8)
-            .collect::<Vec<u8>>();
-
-        String::from_utf8(sol).unwrap()
+        String::from_utf8(
+            diagram
+                .iter()
+                .map(|stack| stack[stack.len() - 1] as u8)
+                .collect(),
+        )
+        .unwrap()
     }
 }
 
