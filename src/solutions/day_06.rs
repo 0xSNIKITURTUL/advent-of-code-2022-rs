@@ -14,7 +14,8 @@ fn fill_chunk<I: Iterator<Item = impl PartialEq + Eq + Copy + Clone>>(
 fn has_no_duplicates<T: IntoIterator<Item = impl PartialEq + Eq + Hash> + Clone + Copy>(
     iter: T,
 ) -> bool {
-    iter.into_iter().all(move |x| HashSet::new().insert(x))
+    let mut hash_set = HashSet::new();
+    iter.into_iter().all(move |x| hash_set.insert(x))
 }
 
 fn cycle<T: Clone + Copy>(chunk: &mut Vec<T>, val: T) {
