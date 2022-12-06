@@ -50,12 +50,12 @@ fn main() {
 
     println!("==============");
 
-    // day 05: part 1
+    // day 05: crate reorganization part 1
     let day_five_input = fs::read_to_string("inputs/5.txt").unwrap();
     let day_five_result = solve::<String, day_05::Day05>(&day_five_input, 1);
     println!("day 05 part 1: {}", day_five_result);
 
-    // day 05: part 2
+    // day 05: crate reorganization part 2
     let day_five_result = solve::<String, day_05::Day05>(day_five_input, 2);
     println!("day 05 part 2: {}", day_five_result);
 }
