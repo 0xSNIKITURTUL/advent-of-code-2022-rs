@@ -23,11 +23,7 @@ pub fn test_solution<T: Eq + PartialEq + Debug, S: Solver<T>>(
     part: Part,
 ) {
     match part {
-        Part::One => {
-            assert_eq!(S::part_one(input), expected_solution);
-        }
-        Part::Two => {
-            assert_eq!(S::part_two(input), expected_solution);
-        }
+        Part::One => assert_eq!(S::part_one(input), expected_solution),
+        Part::Two => assert_eq!(S::part_two(input), expected_solution),
     }
 }
