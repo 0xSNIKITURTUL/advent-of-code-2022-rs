@@ -11,20 +11,18 @@ fn fill_chunk<I: Iterator<Item = impl PartialEq + Eq + Copy + Clone>>(
     (0..size).map(|_| iter.nth(0).unwrap()).collect()
 }
 
-fn no_duplicates<T: IntoIterator<Item = impl PartialEq + Eq + Hash> + Clone + Copy>(
+fn has_no_duplicates<T: IntoIterator<Item = impl PartialEq + Eq + Hash> + Clone + Copy>(
     iter: T,
 ) -> bool {
-    let mut unique = HashSet::new();
-    iter.into_iter().all(move |x| unique.insert(x))
+    iter.into_iter().all(move |x| HashSet::new().insert(x))
 }
 
 fn cycle<T: Clone + Copy>(chunk: &mut Vec<T>, val: T) {
     (0..chunk.len()).for_each(|curr| {
-        chunk[curr] = if curr == chunk.len() - 1 {
-            val
-        } else {
-            chunk[curr + 1]
-        };
+        chunk[curr] = match curr == chunk.len() - 1 {
+            true => val,
+            false => chunk[curr + 1],
+        }
     })
 }
 
@@ -34,12 +32,12 @@ impl Solver<usize> for Day06 {
         let input: String = input.into();
         let mut characters = input.chars();
         let mut cycling_chunk = fill_chunk(&mut characters, SIZE);
-        return if no_duplicates(&cycling_chunk) {
+        return if has_no_duplicates(&cycling_chunk) {
             SIZE
         } else {
             for (x, ch) in characters.enumerate() {
                 cycle(&mut cycling_chunk, ch);
-                if no_duplicates(&cycling_chunk) {
+                if has_no_duplicates(&cycling_chunk) {
                     return x + SIZE + 1;
                 }
             }
@@ -52,12 +50,12 @@ impl Solver<usize> for Day06 {
         let input: String = input.into();
         let mut characters = input.chars();
         let mut cycling_chunk = fill_chunk(&mut characters, SIZE);
-        return if no_duplicates(&cycling_chunk) {
+        return if has_no_duplicates(&cycling_chunk) {
             SIZE
         } else {
             for (x, ch) in characters.enumerate() {
                 cycle(&mut cycling_chunk, ch);
-                if no_duplicates(&cycling_chunk) {
+                if has_no_duplicates(&cycling_chunk) {
                     return x + SIZE + 1;
                 }
             }
