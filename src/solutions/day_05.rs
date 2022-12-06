@@ -30,7 +30,6 @@ fn read_diagram(diagram: &str) -> Vec<Vec<char>> {
 
 pub struct Day05;
 
-#[allow(unused, unused_must_use)]
 impl Solver<String> for Day05 {
     fn part_one(input: impl Into<String>) -> String {
         let input: String = input.into();
