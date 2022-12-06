@@ -53,12 +53,23 @@ fn main() {
 
     println!("==============");
 
-    // day 05: crate reorganization part 1
+    // day 05: supply stacks part 1
     let day_five_input = fs::read_to_string("inputs/5.txt").unwrap();
     let day_five_result = solve::<String, day_05::Day05>(&day_five_input, Part::One);
     println!("day 05 part 1: {}", day_five_result);
 
-    // day 05: crate reorganization part 2
+    // day 05: supply stacks part 2
     let day_five_result = solve::<String, day_05::Day05>(day_five_input, Part::Two);
     println!("day 05 part 2: {}", day_five_result);
+
+    println!("==============");
+
+    // day 06: tuning trouble part 1
+    let day_six_input = fs::read_to_string("inputs/6.txt").unwrap();
+    let day_six_result = solve::<usize, day_06::Day06>(&day_six_input, Part::One);
+    println!("day 06 part 1: {}", day_six_result);
+
+    // day 06: tuning trouble part 2
+    let day_five_result = solve::<usize, day_06::Day06>(day_six_input, Part::Two);
+    println!("day 06 part 2: {}", day_five_result);
 }
