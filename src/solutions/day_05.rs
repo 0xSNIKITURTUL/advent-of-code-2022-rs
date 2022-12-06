@@ -1,41 +1,31 @@
 use crate::solver::Solver;
 
-fn rotate90(v: Vec<Vec<char>>) -> Vec<Vec<char>> {
-    if v.is_empty() {
-        return v;
-    }
-
-    // transpose code adapted from @Netwave on stackoverflow: https://stackoverflow.com/a/64499219/19020697
-    let transposed = (0..v[0].len())
-        .map(|i| v.iter().map(|inner| inner[i]).collect::<Vec<char>>())
+fn read_diagram(diagram: &str) -> Vec<Vec<char>> {
+    let matrix = diagram
+        .lines()
+        .map(|line| {
+            line.chars()
+                .collect::<Vec<char>>()
+                .chunks(4)
+                .map(|chunk| chunk[1])
+                .collect::<Vec<char>>()
+        })
         .collect::<Vec<Vec<char>>>();
 
-    let mut diagram = vec![];
-    for mut stack in transposed {
-        stack.reverse();
-        let filtered = stack
-            .iter()
-            .filter(|x| **x != ' ')
-            .cloned()
-            .collect::<Vec<char>>();
-        diagram.push(filtered);
-    }
-    diagram
-}
-
-fn build_vector2d_from_diagram(diagram: &str) -> Vec<Vec<char>> {
-    let mut vector2d: Vec<Vec<char>> = vec![];
-
-    diagram.lines().for_each(|line| {
-        let characters = line.chars().collect::<Vec<char>>();
-        let mut row = vec![];
-        for chunk in characters.chunks(4) {
-            row.push(chunk[1]);
-        }
-        vector2d.push(row);
-    });
-
-    vector2d
+    (0..matrix[0].len())
+        .map(|index| matrix.iter().map(|inner| inner[index]).collect())
+        .collect::<Vec<Vec<char>>>()
+        .iter()
+        .map(|row| {
+            let mut borrowed = row.clone();
+            borrowed.reverse();
+            borrowed[1..]
+                .iter()
+                .filter(|x| **x != ' ')
+                .cloned()
+                .collect()
+        })
+        .collect()
 }
 
 pub struct Day05;
@@ -45,8 +35,7 @@ impl Solver<String> for Day05 {
     fn part_one(input: impl Into<String>) -> String {
         let input: String = input.into();
         let mut parts = input.split("\n\n");
-        let diagram = build_vector2d_from_diagram(parts.nth(0).unwrap());
-        let mut diagram = rotate90(diagram);
+        let mut diagram = read_diagram(parts.nth(0).unwrap());
         let instructions = parts.nth(0).unwrap();
 
         instructions.lines().for_each(|instruction| {
@@ -71,8 +60,7 @@ impl Solver<String> for Day05 {
     fn part_two(input: impl Into<String>) -> String {
         let input: String = input.into();
         let mut parts = input.split("\n\n");
-        let diagram = build_vector2d_from_diagram(parts.nth(0).unwrap());
-        let mut diagram = rotate90(diagram);
+        let mut diagram = read_diagram(parts.nth(0).unwrap());
         let instructions = parts.nth(0).unwrap();
 
         instructions.lines().for_each(|instruction| {
