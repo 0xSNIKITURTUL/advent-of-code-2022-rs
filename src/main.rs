@@ -72,4 +72,15 @@ fn main() {
     // day 06: tuning trouble part 2
     let day_06_part_two_result = solve::<usize, day_06::Day06>(day_06_input, Part::Two);
     println!("day 06 part 2: {}", day_06_part_two_result);
+
+    println!("==============");
+
+    // day 06: no space left on device part 1
+    let day_07_input = fs::read_to_string("inputs/7.txt").unwrap();
+    let day_07_part_one_result = solve::<usize, day_07::Day07>(&day_07_input, Part::One);
+    println!("day 07 part 1: {}", day_07_part_one_result);
+
+    // day 06: no space left on device part 2
+    let day_07_part_two_result = solve::<usize, day_07::Day07>(day_07_input, Part::Two);
+    println!("day 07 part 2: {}", day_07_part_two_result);
 }
