@@ -12,10 +12,9 @@ fn collect_directory_sizes(input: impl Into<String>) -> Vec<usize> {
                 false => tracker.push(0),
             }
         } else if !line.starts_with("$ ls") && !line.starts_with("dir") {
-            let num = line.split(' ').next().unwrap().parse::<usize>().unwrap();
-            for i in &mut tracker {
-                *i += num;
-            }
+            tracker
+                .iter_mut()
+                .for_each(|x| *x += line.split(' ').next().unwrap().parse::<usize>().unwrap());
         }
     });
     [tracker, exited].concat()
