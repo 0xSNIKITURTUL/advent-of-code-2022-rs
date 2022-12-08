@@ -83,4 +83,15 @@ fn main() {
     // day 07: no space left on device part 2
     let day_07_part_two_result = solve::<usize, day_07::Day07>(day_07_input, Part::Two);
     println!("day 07 part 2: {}", day_07_part_two_result);
+
+    println!("==============");
+
+    // day 08: treetop tree house part 1
+    let day_08_input = fs::read_to_string("inputs/8.txt").unwrap();
+    let day_08_part_one_result = solve::<usize, day_08::Day08>(&day_08_input, Part::One);
+    println!("day 08 part 1: {}", day_08_part_one_result);
+
+    // day 08: treetop tree house part 2
+    let day_08_part_two_result = solve::<usize, day_08::Day08>(day_08_input, Part::Two);
+    println!("day 08 part 2: {}", day_08_part_two_result);
 }
