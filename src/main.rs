@@ -94,4 +94,15 @@ fn main() {
     // day 08: treetop tree house part 2
     let day_08_part_two_result = solve::<usize, day_08::Day08>(day_08_input, Part::Two);
     println!("day 08 part 2: {}", day_08_part_two_result);
+
+    println!("==============");
+
+    // day 09: rope bridge part 1
+    let day_09_input = fs::read_to_string("inputs/9.txt").unwrap();
+    let day_09_part_one_result = solve::<usize, day_09::Day09>(&day_09_input, Part::One);
+    println!("day 09 part 1: {}", day_09_part_one_result);
+
+    // day 09: rope bridge part 2
+    let day_09_part_two_result = solve::<usize, day_09::Day09>(day_09_input, Part::Two);
+    println!("day 09 part 2: {}", day_09_part_two_result);
 }
