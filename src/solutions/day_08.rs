@@ -10,7 +10,6 @@ fn build_grid(input: impl Into<String>) -> Vec<Vec<char>> {
         .collect::<Vec<Vec<char>>>()
 }
 
-#[allow(unused, unused_must_use)]
 impl Solver<usize> for Day08 {
     fn part_one(input: impl Into<String>) -> usize {
         let grid = build_grid(input);
