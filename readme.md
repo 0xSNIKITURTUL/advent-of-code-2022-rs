@@ -2,7 +2,7 @@
 
 This repository contains my code for the advent of code 2022.
 
-To run, simply run `cargo run`.
+To run, first create a directory called inputs in the project rootand add the input file to it with the name as the number of the day (eg: `9.txt`) and then run `cargo run`.
 
 <!--- advent_readme_stars table --->
 ## 2022 Results
