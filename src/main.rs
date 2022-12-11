@@ -105,4 +105,15 @@ fn main() {
     // day 09: rope bridge part 2
     let day_09_part_two_result = solve::<usize, day_09::Day09>(day_09_input, Part::Two);
     println!("day 09 part 2: {}", day_09_part_two_result);
+
+    println!("==============");
+
+    // day 10: rope bridge part 1
+    let day_10_input = fs::read_to_string("inputs/10.txt").unwrap();
+    let day_10_part_one_result = solve::<String, day_10::Day10>(&day_10_input, Part::One);
+    println!("day 10 part 1: {}", day_10_part_one_result);
+
+    // day 10: rope bridge part 2
+    let day_10_part_two_result = solve::<String, day_10::Day10>(day_10_input, Part::Two);
+    println!("day 10 part 2: {}", day_10_part_two_result);
 }
