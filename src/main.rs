@@ -108,12 +108,23 @@ fn main() {
 
     println!("==============");
 
-    // day 10: rope bridge part 1
+    // day 10: cathode ray tube part 1
     let day_10_input = fs::read_to_string("inputs/10.txt").unwrap();
     let day_10_part_one_result = solve::<String, day_10::Day10>(&day_10_input, Part::One);
     println!("day 10 part 1: {}", day_10_part_one_result);
 
-    // day 10: rope bridge part 2
+    // day 10: cathode ray tube part 2
     let day_10_part_two_result = solve::<String, day_10::Day10>(day_10_input, Part::Two);
-    println!("day 10 part 2: {}", day_10_part_two_result);
+    println!("day 10 part 2: \n{}", day_10_part_two_result);
+
+    println!("==============");
+
+    // day 11: monkey in the middle part 1
+    let day_11_input = fs::read_to_string("inputs/11.txt").unwrap();
+    let day_11_part_one_result = solve::<usize, day_11::Day11>(&day_11_input, Part::One);
+    println!("day 11 part 1: {}", day_11_part_one_result);
+
+    // day 11: monkey in the middle part 2
+    let day_11_part_two_result = solve::<usize, day_11::Day11>(day_11_input, Part::Two);
+    println!("day 11 part 2: {}", day_11_part_two_result);
 }
